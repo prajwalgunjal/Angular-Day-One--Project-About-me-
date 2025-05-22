@@ -18,7 +18,6 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/about-me-app",
-            "baseHref": "/Angular-Day-One--Project-About-me/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -56,7 +55,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/Angular-Day-One--Project-About-me/"
             },
             "development": {
               "optimization": false,
