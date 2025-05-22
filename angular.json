@@ -56,7 +56,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/Angular-Day-One--Project-About-me/"
+              "baseHref": "./"
             },
             "development": {
               "optimization": false,
