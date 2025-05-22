@@ -1,23 +1,28 @@
-import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
+@NgModule({
+  declarations: [
+    AppComponent,
     NavbarComponent,
     HeaderComponent,
     AboutComponent,
     SkillsComponent,
     FooterComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppComponent {
-  title = 'about-me-app';
-}
+export class AppModule { }

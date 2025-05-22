@@ -1,0 +1,52 @@
+<section id="skills" class="skills-section section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Technical Skills</h2>
+      <p class="section-subtitle">Technologies I work with</p>
+    </div>
+    
+    <div class="skills-content">
+      <div class="skills-categories">
+        <div class="skill-category" *ngFor="let category of skillCategories">
+          <div class="category-header">
+            <div class="category-icon">{{ category.icon }}</div>
+            <h3>{{ category.name }}</h3>
+          </div>
+          
+          <div class="skills-grid">
+            <div class="skill-item card" *ngFor="let skill of category.skills">
+              <div class="skill-info">
+                <div class="skill-name">{{ skill.name }}</div>
+                <div class="skill-level">{{ skill.level }}%</div>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width.%]="skill.level"></div>
+              </div>
+              <div class="skill-description">{{ skill.description }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-summary card">
+        <h3>What I Bring to the Table</h3>
+        <div class="summary-items">
+          <div class="summary-item" *ngFor="let item of summaryItems">
+            <div class="summary-icon">{{ item.icon }}</div>
+            <div class="summary-content">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tools-section">
+          <h4>Tools & Platforms</h4>
+          <div class="tools-list">
+            <span class="tool-tag" *ngFor="let tool of tools">{{ tool }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <div class="nav-brand">
+        <span class="brand-icon">&lt;/&gt;</span>
+        <span class="brand-text">JohnDoe</span>
+      </div>
+      
+      <div class="nav-links" [class.nav-open]="isMenuOpen">
+        <a href="#home" class="nav-link" (click)="closeMenu()">Home</a>
+        <a href="#about" class="nav-link" (click)="closeMenu()">About</a>
+        <a href="#skills" class="nav-link" (click)="closeMenu()">Skills</a>
+        <a href="#contact" class="nav-link" (click)="closeMenu()">Contact</a>
+      </div>
+      
+      <button class="nav-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>

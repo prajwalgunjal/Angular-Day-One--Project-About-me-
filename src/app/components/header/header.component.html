@@ -1,0 +1,42 @@
+<section id="home" class="header-section">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-text">
+        <div class="greeting">
+          <span class="wave">👋</span>
+          <span>Hello, I'm</span>
+        </div>
+        <h1 class="name">{{ name }}</h1>
+        <h2 class="title">{{ title }}</h2>
+        <p class="description">{{ description }}</p>
+        
+        <div class="header-actions">
+          <a href="#about" class="btn btn-primary">About Me</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+      
+      <div class="header-visual">
+        <div class="code-block">
+          <div class="code-header">
+            <div class="dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="file-name">developer.ts</span>
+          </div>
+          <div class="code-content">
+            <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = &#123;
+  <span class="property">name</span>: <span class="string">'{{ name }}'</span>,
+  <span class="property">role</span>: <span class="string">'Full stack {{ title }}'</span>,
+  <span class="property">passion</span>: <span class="string">'Writing Dynamic and Scalable Code'</span>,
+  <span class="property">skills</span>: [<span class="string">'Angular'</span>, <span class="string">'C#'</span>,<span class="string">'go'</span>,<span class="string">'C++'</span>],
+  <span class="property">status</span>: <span class="string">'Available'</span>
+&#125;;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

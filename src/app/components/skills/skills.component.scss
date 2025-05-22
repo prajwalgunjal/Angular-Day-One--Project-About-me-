@@ -1,0 +1,219 @@
+.skills-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.skills-categories {
+  .skill-category {
+    margin-bottom: 3rem;
+    
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      
+      .category-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+      
+      h3 {
+        color: var(--text-primary);
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.skill-item {
+  padding: 1.5rem;
+  
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    
+    .skill-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .skill-level {
+      font-size: 0.875rem;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+  }
+  
+  .skill-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+      transition: width 1s ease-in-out;
+    }
+  }
+  
+  .skill-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+}
+
+.skills-summary {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  
+  h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+.summary-items {
+  margin-bottom: 2rem;
+  
+  .summary-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    
+    .summary-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    
+    .summary-content {
+      h4 {
+        color: var(--text-primary);
+        margin-bottom: 0.25rem;
+        font-size: 1rem;
+      }
+      
+      p {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.tools-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  
+  h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  
+  .tool-tag {
+    background: var(--background-primary);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Mobile Styles
+@media (max-width: 768px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-summary {
+    position: static;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .category-header {
+    .category-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.25rem;
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+}

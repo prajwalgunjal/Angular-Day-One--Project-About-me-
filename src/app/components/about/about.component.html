@@ -1,0 +1,64 @@
+<section id="about" class="about-section section">
+  <div class="container">
+    <div class="section-header">
+      <h2>About Me</h2>
+      <p class="section-subtitle">Get to know me better</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <div class="bio-card card">
+          <h3>{{ title }}</h3>
+          <p>{{ bio }}</p>
+          
+          <div class="highlights">
+            <div class="highlight-item" *ngFor="let highlight of highlights">
+              <div class="highlight-icon">{{ highlight.icon }}</div>
+              <div class="highlight-content">
+                <h4>{{ highlight.title }}</h4>
+                <p>{{ highlight.description }}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="stats">
+            <div class="stat-item" *ngFor="let stat of stats">
+              <div class="stat-number">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-visual">
+        <div class="profile-card card">
+          <div class="profile-avatar">
+            <div class="avatar-placeholder">
+              <span class="avatar-icon">👨‍💻</span>
+            </div>
+          </div>
+          
+          <div class="profile-info">
+            <h3>Prajwal Gunjal</h3>
+            <span class="profile-role">Full-Stack Developer</span>
+            
+            <div class="profile-details">
+              <div class="detail-item">
+                <span class="detail-icon">📍</span>
+                <span>Pune👑</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">💼</span>
+                <span>9.30 to 6.30</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🎯</span>
+                <span>Writing Dynamic Codes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
