@@ -168,11 +168,23 @@
 .btn-reset {
   background: linear-gradient(45deg, #ffa726, #ff9800);
   color: white;
+  margin-bottom: 15px; 
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+  &:hover {
+    background: linear-gradient(45deg, #ff9800, #fb8c00);
+    box-shadow: 0 4px 12px rgba(251, 140, 0, 0.2);
+  }
 }
 
 .btn-random {
   background: linear-gradient(45deg, #ab47bc, #9c27b0);
   color: white;
+  margin-bottom: 15px; 
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.2);
+  &:hover {
+    background: linear-gradient(45deg, #9c27b0, #8e24aa);
+    box-shadow: 0 4px 12px rgba(200, 0, 255, 0.2);
+  }
 }
 
 .live-preview-badge {

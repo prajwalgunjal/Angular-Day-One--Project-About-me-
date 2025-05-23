@@ -1,13 +1,5 @@
 <!-- components/two-way-binding/two-way-binding.component.html -->
 <div class="binding-container">
-  <!-- Toggle Button -->
-  <button 
-    class="edit-toggle-btn" 
-    (click)="toggleEditMode()"
-    [class.active]="isEditMode">
-    <span class="icon">{{ isEditMode ? '💾' : '✏️' }}</span>
-    {{ isEditMode ? 'Save Changes' : 'Edit Values' }}
-  </button>
 
   <!-- Interactive Editor -->
   <div class="editor-panel" [class.active]="isEditMode">
@@ -79,6 +71,14 @@
       </button>
     </div>
   </div>
+ <!-- Toggle Button -->
+  <button 
+    class="edit-toggle-btn" 
+    (click)="toggleEditMode()"
+    [class.active]="isEditMode">
+    <span class="icon">{{ isEditMode ? '💾' : '✏️' }}</span>
+    {{ isEditMode ? 'Save Changes' : 'Edit Values' }}
+  </button>
 
   <!-- Live Preview Badge -->
   <div class="live-preview-badge" *ngIf="isEditMode">
