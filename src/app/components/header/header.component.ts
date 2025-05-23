@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Import from your main components folder
 import { TwoWayBindingComponent } from '../two-way-binding/two-way-binding.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TwoWayBindingComponent],
+  imports: [CommonModule, TwoWayBindingComponent,RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  // Data properties with two-way binding
   name = 'Prajwal Gunjal';
   title = 'Software Engineer';
   description = 'Dynamic full-stack developer with a love for clean UI and scalable backend systems.';
