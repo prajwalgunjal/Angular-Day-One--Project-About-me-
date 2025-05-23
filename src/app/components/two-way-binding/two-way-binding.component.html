@@ -1,0 +1,88 @@
+<!-- components/two-way-binding/two-way-binding.component.html -->
+<div class="binding-container">
+  <!-- Toggle Button -->
+  <button 
+    class="edit-toggle-btn" 
+    (click)="toggleEditMode()"
+    [class.active]="isEditMode">
+    <span class="icon">{{ isEditMode ? '💾' : '✏️' }}</span>
+    {{ isEditMode ? 'Save Changes' : 'Edit Values' }}
+  </button>
+
+  <!-- Interactive Editor -->
+  <div class="editor-panel" [class.active]="isEditMode">
+    <div class="editor-grid">
+      <!-- Name Input -->
+      <div class="input-group full-width">
+        <label>👤 Name</label>
+        <input 
+          type="text" 
+          [(ngModel)]="editableData.name"
+          (input)="onDataChange()"
+          placeholder="Enter your name"
+          class="styled-input"
+        />
+      </div>
+
+      <!-- Title Input -->
+      <div class="input-group full-width">
+        <label>💼 Title</label>
+        <input 
+          type="text" 
+          [(ngModel)]="editableData.title"
+          (input)="onDataChange()"
+          placeholder="Your professional title"
+          class="styled-input"
+        />
+      </div>
+
+      <!-- Skills Input -->
+      <div class="input-group full-width">
+        <label>⚡ Skills (comma separated)</label>
+        <input 
+          type="text" 
+          [value]="skillsString"
+          (input)="updateSkills($event)"
+          placeholder="Angular, TypeScript, Node.js..."
+          class="styled-input"
+        />
+        <div class="skills-display">
+          <span 
+            *ngFor="let skill of editableData.skills; trackBy: trackBySkill" 
+            class="skill-chip"
+            (click)="removeSkill(skill)">
+            {{ skill }} <span class="remove-x">×</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Passion Input -->
+      <div class="input-group full-width">
+        <label>🔥 Passion</label>
+        <input 
+          type="text" 
+          [(ngModel)]="editableData.passion"
+          (input)="onDataChange()"
+          placeholder="What drives you as a developer?"
+          class="styled-input"
+        />
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="action-buttons">
+      <button class="btn-reset" (click)="resetToDefaults()">
+        🔄 Reset
+      </button>
+      <button class="btn-random" (click)="fillRandomData()">
+        🎲 Random
+      </button>
+    </div>
+  </div>
+
+  <!-- Live Preview Badge -->
+  <div class="live-preview-badge" *ngIf="isEditMode">
+    <span class="pulse-dot"></span>
+    Live
+  </div>
+</div>
