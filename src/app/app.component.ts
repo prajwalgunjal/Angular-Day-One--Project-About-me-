@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     AboutComponent,
     SkillsComponent,
-    FooterComponent
+    FooterComponent,
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
