@@ -19,4 +19,9 @@ export class ContactComponent {
     // Navigate to the template form component
     this.router.navigate(['/contact-form']);
   }
+  openReactiveForm(): void {
+    this.router.navigate(['/reactive-form']);
+    console.log('Opening Reactive Form');
+  }
+
 }

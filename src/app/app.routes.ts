@@ -7,6 +7,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'header', pathMatch: 'full'},
@@ -18,4 +19,5 @@ export const routes: Routes = [
   { path: 'twowaybinding', component: TwoWayBindingComponent },
   {path: 'contact', component: ContactComponent},
   { path: 'contact-form', component: TemplateFormComponent },
+  { path: 'reactive-form', component: ReactiveFormComponent }
 ];

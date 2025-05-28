@@ -11,7 +11,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms'; // Import FormsModule for template-driven forms
 import { TemplateFormComponent } from './components/template-form/template-form.component'; // Add this import
-
+import { ReactiveFormsModule } from '@angular/forms'; // Add this import
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component'; // Import the ReactiveFormComponent
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +22,14 @@ import { TemplateFormComponent } from './components/template-form/template-form.
     SkillsComponent,
     FooterComponent,
     TemplateFormComponent,
+    ReactiveFormComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule   
+    CommonModule,
+    ReactiveFormsModule // Add this for reactive forms 
   ],
   providers: [],
   bootstrap: [AppComponent]

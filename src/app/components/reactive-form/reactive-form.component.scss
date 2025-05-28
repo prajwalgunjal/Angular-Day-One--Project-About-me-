@@ -1,0 +1,282 @@
+/* reactive-form.component.css */
+
+.template-form-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.form-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 80vh;
+}
+
+.form-info {
+  padding: 40px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #6b54ff 100%);
+}
+
+.form-info h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-description {
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  padding: 12px 16px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-control:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+
+.error-messages {
+  margin-top: 5px;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+}
+
+.form-status {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border-left: 4px solid #dee2e6;
+}
+
+.status-valid {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-invalid {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.preview-panel {
+  padding: 40px;
+  background: #1a1a1a;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.contact-card {
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #2d2d2d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  background: #3a3a3a;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #28ca42; }
+
+.card-title {
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+}
+
+.json-key {
+  color: #79c0ff;
+}
+
+.json-string {
+  color: #a5d6ff;
+}
+
+.json-object {
+  color: #ffa657;
+}
+
+.binding-demo, .datetime-demo, .form-states-demo {
+  margin-bottom: 30px;
+}
+
+.binding-demo h3, .datetime-demo h3, .form-states-demo h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.binding-info, .datetime-info, .states-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.binding-item, .datetime-item, .state-item {
+  background: #2d2d2d;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.highlight {
+  color: #ffa657;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .form-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .preview-panel {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .template-form-container {
+    padding: 10px;
+  }
+  
+  .form-info, .preview-panel {
+    padding: 20px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
