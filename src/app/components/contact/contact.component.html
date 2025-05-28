@@ -37,6 +37,11 @@
         <div class="cta-section">
           <a [href]="'mailto:' + email" class="btn btn-primary">Send Message</a>
           <a [href]="linkedinUrl" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
+          <!-- New Button Added -->
+          <button (click)="openContactForm()" class="btn btn-contact-form">
+            <span class="btn-icon">📝</span>
+            Fill Contact Form
+          </button>
         </div>
       </div>
 

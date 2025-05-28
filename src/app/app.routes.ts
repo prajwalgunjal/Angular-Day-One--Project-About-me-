@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { TemplateFormComponent } from './components/template-form/template-form.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'header', pathMatch: 'full'},
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'twowaybinding', component: TwoWayBindingComponent },
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
+  { path: 'contact-form', component: TemplateFormComponent },
 ];

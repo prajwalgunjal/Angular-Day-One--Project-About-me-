@@ -1,0 +1,196 @@
+<div class="template-form-container">
+  <div class="container">
+    <div class="form-section">
+      <div class="form-content">
+        <div class="form-info">
+          <h2>Template-Driven Form</h2>
+          <p class="form-description">
+            Fill this form to see how Angular's template-driven forms work.
+            This form includes validation and demonstrates two-way data binding.
+          </p>
+
+          <!-- Form -->
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-form">
+            
+            <!-- Name Field -->
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                [(ngModel)]="formData.name"
+                #name="ngModel"
+                required
+                minlength="2"
+                class="form-control"
+                placeholder="Enter your full name"
+              >
+              <div class="error-messages" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <small *ngIf="name.errors?.['required']" class="error">Name is required</small>
+                <small *ngIf="name.errors?.['minlength']" class="error">Name must be at least 2 characters</small>
+              </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="formData.email"
+                #email="ngModel"
+                required
+                email
+                class="form-control"
+                placeholder="Enter your email address"
+              >
+              <div class="error-messages" *ngIf="email.invalid && (email.dirty || email.touched)">
+                <small *ngIf="email.errors?.['required']" class="error">Email is required</small>
+                <small *ngIf="email.errors?.['email']" class="error">Please enter a valid email</small>
+              </div>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                [(ngModel)]="formData.phoneNumber"
+                #phone="ngModel"
+                required
+                pattern="[0-9]{10}"
+                class="form-control"
+                placeholder="Enter 10-digit phone number"
+              >
+              <div class="error-messages" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <small *ngIf="phone.errors?.['required']" class="error">Phone number is required</small>
+                <small *ngIf="phone.errors?.['pattern']" class="error">Please enter a valid 10-digit phone number</small>
+              </div>
+            </div>
+
+            <!-- Location Field -->
+            <div class="form-group">
+              <label for="location">Location *</label>
+              <select
+                id="location"
+                name="location"
+                [(ngModel)]="formData.location"
+                #location="ngModel"
+                required
+                class="form-control"
+              >
+                <option value="">Select your location</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="pune">Pune</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="chennai">Chennai</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-messages" *ngIf="location.invalid && (location.dirty || location.touched)">
+                <small *ngIf="location.errors?.['required']" class="error">Please select a location</small>
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-primary">
+                Submit Form
+              </button>
+              <button type="button" (click)="onReset(contactForm)" class="btn btn-secondary">
+                Reset Form
+              </button>
+            </div>
+
+            <!-- Form Status Display -->
+            <div class="form-status">
+              <p>Form Status: 
+                <span [class]="contactForm.form.valid ? 'status-valid' : 'status-invalid'">
+                  {{ contactForm.form.valid ? 'Valid' : 'Invalid' }}
+                </span>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Real-time Preview Panel -->
+        <div class="preview-panel">
+          <!-- Pipes Demonstration Card -->
+          <div class="contact-card card">
+            <div class="card-header">
+              <div class="dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="card-title">pipes-demo.json</span>
+            </div>
+            <div class="card-content">
+              <pre><code>&#123;
+  "<span class="json-key">pipes_demonstration</span>": &#123;
+    "<span class="json-key">uppercase_pipe</span>": "<span class="json-string">{{ formData.name | uppercase }}</span>",
+    "<span class="json-key">lowercase_pipe</span>": "<span class="json-string">{{ formData.email | lowercase }}</span>",
+    "<span class="json-key">current_datetime</span>": "<span class="json-string">{{ currentDate | date:'full' }}</span>",
+    "<span class="json-key">short_date</span>": "<span class="json-string">{{ currentDate | date:'short' }}</span>",
+    "<span class="json-key">time_only</span>": "<span class="json-string">{{ currentDate | date:'shortTime' }}</span>"
+  &#125;,
+  "<span class="json-key">form_data_preview</span>": <span class="json-object">{{ formData | json }}</span>
+  <!-- "<span class="json-key">sample_user_object</span>": <span class="json-object">{{ sampleUser | json }}</span> -->
+&#125;</code></pre>
+            </div>
+          </div>
+
+          <!-- Two-Way Data Binding Demo -->
+          <div class="binding-demo">
+            <h3>Two-Way Data Binding Demo</h3>
+            <div class="binding-info">
+              <div class="binding-item">
+                <strong>Name (Uppercase):</strong> 
+                <span class="highlight">{{ formData.name | uppercase }}</span>
+              </div>
+              <div class="binding-item">
+                <strong>Email (Lowercase):</strong> 
+                <span class="highlight">{{ formData.email | lowercase }}</span>
+              </div>
+              <div class="binding-item">
+                <strong>Phone:</strong> 
+                <span class="highlight">{{ formData.phoneNumber }}</span>
+              </div>
+              <div class="binding-item">
+                <strong>Location (Uppercase):</strong> 
+                <span class="highlight">{{ formData.location | uppercase }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DateTime Pipes Demo -->
+          <div class="datetime-demo">
+            <h3>DateTime Pipe Examples</h3>
+            <div class="datetime-info">
+              <div class="datetime-item">
+                <strong>Full Date:</strong> {{ currentDate | date:'full' }}
+              </div>
+              <div class="datetime-item">
+                <strong>Short Date:</strong> {{ currentDate | date:'short' }}
+              </div>
+              <div class="datetime-item">
+                <strong>Medium Date:</strong> {{ currentDate | date:'medium' }}
+              </div>
+              <div class="datetime-item">
+                <strong>Time Only:</strong> {{ currentDate | date:'shortTime' }}
+              </div>
+              <div class="datetime-item">
+                <strong>Custom Format:</strong> {{ currentDate | date:'dd/MM/yyyy HH:mm' }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

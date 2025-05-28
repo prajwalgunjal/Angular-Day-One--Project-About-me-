@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -11,4 +12,11 @@ export class ContactComponent {
   linkedinHandle = 'prajwal-gunjal';
   linkedinUrl = 'https://www.linkedin.com/in/prajwal-gunjal';
   currentYear = new Date().getFullYear();
+
+  constructor(private router: Router) {}
+
+  openContactForm() {
+    // Navigate to the template form component
+    this.router.navigate(['/contact-form']);
+  }
 }
