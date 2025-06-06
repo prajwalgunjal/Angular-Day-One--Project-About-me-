@@ -8,6 +8,7 @@ import { TwoWayBindingComponent } from './components/two-way-binding/two-way-bin
 import { ContactComponent } from './components/contact/contact.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { HttpClientDemoComponent } from './components/http-client-demo/http-client-demo.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'header', pathMatch: 'full'},
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'twowaybinding', component: TwoWayBindingComponent },
   {path: 'contact', component: ContactComponent},
   { path: 'contact-form', component: TemplateFormComponent },
-  { path: 'reactive-form', component: ReactiveFormComponent }
+  { path: 'reactive-form', component: ReactiveFormComponent },
+  {path: 'http-demo', component: HttpClientDemoComponent },
 ];

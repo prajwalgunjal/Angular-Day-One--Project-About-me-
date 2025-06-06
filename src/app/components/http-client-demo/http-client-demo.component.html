@@ -1,0 +1,96 @@
+<div class="demo-container">
+  <h1>HTTP Client Demo - Post Your Thoughts</h1>
+  <!-- GET Section -->
+  <div class="section">
+    <h2>📋 GET - Fetch Posts</h2>
+    <button (click)="getPosts()" class="btn">Get All Posts</button>
+    <div class="result-box" *ngIf="posts.length > 0">
+      <div class="post-item" *ngFor="let post of posts.slice(0, 3)">
+        <strong>{{post.title}}</strong>
+        <p>{{post.body}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST Section -->
+  <div class="section">
+    <h2>➕ POST - Add New Post</h2>
+    <input 
+      [(ngModel)]="newPost.title" 
+      placeholder="Enter post title"
+      class="input-field">
+    <textarea 
+      [(ngModel)]="newPost.body" 
+      placeholder="Enter your thoughts"
+      class="input-field"></textarea>
+    <button (click)="addPost()" class="btn">Add Post</button>
+    <div class="result-box" *ngIf="createdPost">
+      <strong>Created Post:</strong>
+      <p><strong>{{createdPost.title}}</strong></p>
+      <p>{{createdPost.body}}</p>
+    </div>
+  </div>
+
+  <!-- PUT Section -->
+  <div class="section">
+    <h2>✏️ PUT - Update Post</h2>
+    <input 
+      [(ngModel)]="updateData.id" 
+      placeholder="Post ID to update"
+      type="number"
+      class="input-field">
+    <input 
+      [(ngModel)]="updateData.title" 
+      placeholder="New title"
+      class="input-field">
+    <textarea 
+      [(ngModel)]="updateData.body" 
+      placeholder="New content"
+      class="input-field"></textarea>
+    <button (click)="updatePost()" class="btn">Update Post</button>
+    <div class="result-box" *ngIf="updatedPost">
+      <strong>Updated Post:</strong>
+      <p><strong>{{updatedPost.title}}</strong></p>
+      <p>{{updatedPost.body}}</p>
+    </div>
+  </div>
+
+  <!-- PATCH Section -->
+  <div class="section">
+    <h2>🔧 PATCH - Partial Update</h2>
+    <input 
+      [(ngModel)]="patchData.id" 
+      placeholder="Post ID to patch"
+      type="number"
+      class="input-field">
+    <input 
+      [(ngModel)]="patchData.title" 
+      placeholder="New title only"
+      class="input-field">
+    <button (click)="patchPost()" class="btn">Patch Post</button>
+    <div class="result-box" *ngIf="patchedPost">
+      <strong>Patched Post:</strong>
+      <p><strong>{{patchedPost.title}}</strong></p>
+      <p>{{patchedPost.body}}</p>
+    </div>
+  </div>
+
+  <!-- DELETE Section -->
+  <div class="section">
+    <h2>🗑️ DELETE - Remove Post</h2>
+    <input 
+      [(ngModel)]="deleteId" 
+      placeholder="Post ID to delete"
+      type="number"
+      class="input-field">
+    <button (click)="deletePost()" class="btn btn-danger">Delete Post</button>
+    <div class="result-box" *ngIf="deleteSuccess">
+      <strong>Post deleted successfully!</strong>
+    </div>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div class="loading" *ngIf="loading">
+    Loading...
+  </div>
+</div>

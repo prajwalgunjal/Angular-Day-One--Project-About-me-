@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule for template
 import { TemplateFormComponent } from './components/template-form/template-form.component'; // Add this import
 import { ReactiveFormsModule } from '@angular/forms'; // Add this import
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component'; // Import the ReactiveFormComponent
+import { HttpClientDemoComponent } from './components/http-client-demo/http-client-demo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     SkillsComponent,
     FooterComponent,
     TemplateFormComponent,
-    ReactiveFormComponent 
+    ReactiveFormComponent,
+    HttpClientDemoComponent
   ],
   imports: [
     BrowserModule,
