@@ -11,3 +11,27 @@ main {
 html {
   scroll-behavior: smooth;
 }
+:host {
+  display: block;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
